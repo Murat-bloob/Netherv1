@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
-
-exports.run = async (client, message, args) => {
-  msg = message
-
+const db = require('quick.db')
+exports.run = async (client, msg, args) => {
   let kontrol = await db.fetch(`dil_${msg.guild.id}`);
   if (kontrol == "tr") {
   let p = args[0];
@@ -28,7 +26,7 @@ evet, birden fazla yardım sayfamız var 😅!
 
 `)
 
-message.channel.send('yardım')
+msg.channel.send(yardım)
 }
  else {
   let p = args[0];
@@ -54,7 +52,7 @@ well, yes. We have a bunch of pages for help!
 
 `)
 
-message.channel.send('yardım')
+msg.channel.send(yardım)
 
 }}
 exports.conf = {
